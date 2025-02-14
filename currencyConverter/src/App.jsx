@@ -9,7 +9,8 @@ function App() {
  const [from, setFrom] = useState("usd") 
  const [to, setTo] = useState("inr") 
  const [convertedAmount, setConvertedAmount] = useState(0)
-
+const fromUpper = (from).toUpperCase()
+const toUpper = (to).toUpperCase()
 
  const CurrencyInfo = useCurrencyInfo(from)
  const options = Object.keys(CurrencyInfo)
@@ -48,10 +49,10 @@ function App() {
                         selectCurrency= {from} 
                         /> 
                      </div>
-                     <div className=' w-full h-10 flex justify-center items-center'>
+                     <div className=' w-full h-1.5 flex justify-center items-center'>
                         <button 
                         type='button'
-                        className='  border-white rounded-md bg-blue-600 text-white px-2 py-0.5'
+                        className='  border-white rounded-md bg-blue-600 text-white px-2 py-0.5 h-10 w-20'
                         onClick={swap}
                         >
                               swap
@@ -63,7 +64,7 @@ function App() {
                         amount={convertedAmount}
                         currrencyOption={options}
                         onCurrencyChange={(currency)=> {setTo(currency) }}
-                        selectCurrency= {from} 
+                        selectCurrency= {to} 
                         amountDisabled
                         /> 
                      </div>
@@ -72,7 +73,7 @@ function App() {
                       className='w-full bg-blue-600 text-white px-4 py-3 rounded-lg '
                       onClick={convert}
                      >
-                        convert
+                        convert {fromUpper} to {toUpper}
                      </button>
                   </form>
 
