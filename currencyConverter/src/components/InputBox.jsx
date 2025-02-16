@@ -21,7 +21,7 @@ function InputBox({
                 <input type="number"
                         id={amountInpuId}
                         className="outline-none w-full bg-transparent py-1.5"
-                        placeholder="amount" 
+                        placeholder="Enter amount" 
                         disabled = {amountDisabled}
                         value={amount}
                         onChange={(e) => onAmountChange && onAmountChange(Number(e.target.value))}

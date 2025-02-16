@@ -5,7 +5,7 @@ import useCurrencyInfo from "./hooks/useCurrencyinfo"
 
 
 function App() {
- const [amount, setAmount] = useState(0)
+ const [amount, setAmount] = useState()
  const [from, setFrom] = useState("usd") 
  const [to, setTo] = useState("inr") 
  const [convertedAmount, setConvertedAmount] = useState(0)
@@ -33,6 +33,9 @@ const toUpper = (to).toUpperCase()
             }}
             >
             <div className='w-full'>
+               <div className='flex justify-center items-center text-white text-2xl font-bold pb-10 '>
+                  <h1 className='backdrop-blur-sm bg-white/30  p-5 rounded-2xl border-1 border-black font-sans '>Currency converter</h1>
+               </div>
                <div className='w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30 '>
                   <form onSubmit={(e) =>{
                      e.preventDefault();
@@ -41,7 +44,7 @@ const toUpper = (to).toUpperCase()
                   >
                      <div className='w-full mb-1' >
                      <InputBox
-                        label="from"
+                        label="From"
                         amount={amount}
                         currrencyOption={options}
                         onCurrencyChange={(currency)=> { setFrom(currency)}}
@@ -52,7 +55,7 @@ const toUpper = (to).toUpperCase()
                      <div className=' w-full h-1.5 flex justify-center items-center'>
                         <button 
                         type='button'
-                        className='  border-white rounded-md bg-pink-800 hover:bg-white hover:text-black hover:cursor-pointer hover:border-2 hover:border-black text-white px-2 py-0.5 h-10 w-20'
+                        className='  border-white rounded-md bg-pink-800 hover:bg-pink-700  active:bg-white active:text-black active:border-1 active:border-black hover:cursor-pointer   text-white px-2 py-0.5 h-10 w-20'
                         onClick={swap}
                         >
                               swap
@@ -60,7 +63,7 @@ const toUpper = (to).toUpperCase()
                      </div>
                      <div className='w-full mt-1 mb-4' >
                      <InputBox
-                        label="to"
+                        label="To"
                         amount={convertedAmount}
                         currrencyOption={options}
                         onCurrencyChange={(currency)=> {setTo(currency) }}
@@ -70,8 +73,7 @@ const toUpper = (to).toUpperCase()
                      </div>
                      <button
                       type='submit'
-                      className='w-full bg-pink-800 hover:bg-white hover:text-black hover:cursor-pointer text-white px-4 py-3 rounded-lg hover:border-2 hover:border-black '
-                      onClick={convert}
+                      className=' w-full bg-pink-800 hover:bg-pink-700 hover:text-white hover:cursor-pointer shadow-lg text-white px-4 py-3 rounded-lg active:bg-white active:text-black active:cursor-pointer active:shadow-non active:border-1 active:border-black'
                      >
                         convert {fromUpper} to {toUpper}
                      </button>
