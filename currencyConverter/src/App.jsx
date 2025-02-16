@@ -52,7 +52,7 @@ const toUpper = (to).toUpperCase()
                      <div className=' w-full h-1.5 flex justify-center items-center'>
                         <button 
                         type='button'
-                        className='  border-white rounded-md bg-blue-600 text-white px-2 py-0.5 h-10 w-20'
+                        className='  border-white rounded-md bg-pink-800 hover:bg-white hover:text-black hover:cursor-pointer hover:border-2 hover:border-black text-white px-2 py-0.5 h-10 w-20'
                         onClick={swap}
                         >
                               swap
@@ -70,7 +70,7 @@ const toUpper = (to).toUpperCase()
                      </div>
                      <button
                       type='submit'
-                      className='w-full bg-blue-600 text-white px-4 py-3 rounded-lg '
+                      className='w-full bg-pink-800 hover:bg-white hover:text-black hover:cursor-pointer text-white px-4 py-3 rounded-lg hover:border-2 hover:border-black '
                       onClick={convert}
                      >
                         convert {fromUpper} to {toUpper}
