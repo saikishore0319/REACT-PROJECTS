@@ -1,0 +1,18 @@
+
+import './App.css'
+import Login from './components/Login'
+import UserContextProvider from './Context/UserContextProvider'
+import Profile from './components/profile'
+
+function App() {
+
+
+  return (
+    <UserContextProvider>
+      <Login/>  
+      <Profile/>    
+    </UserContextProvider>
+  )
+}
+
+export default App
