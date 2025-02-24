@@ -36,7 +36,7 @@ function App() {
       })
     })
   }
-
+//test comment
   useEffect(()=>{
     console.log("getting from local storage", todos)
     const storedTodos =JSON.parse(localStorage.getItem('todos')) 
