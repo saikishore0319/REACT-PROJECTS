@@ -20,7 +20,7 @@ function AddTodo(){
         <h1 className="text-2xl  font-semibold font-sans text-white">Add Todo</h1>
         <div className="flex justify-center gap-3 pt-5">
         <input 
-        className="border-none bg-sky-100 rounded-lg w-190 text-left pl-10  h-10 hover:bg-sky-300 "
+        className="border-none bg-sky-100 rounded-lg md:w-190 text-left pl-10  h-10 hover:bg-sky-300 "
         type="text" 
         placeholder="Enter a Todo..."
         value={input}
@@ -28,7 +28,7 @@ function AddTodo(){
          />
          <button
          
-         className="border-none bg-sky-100  h-10 rounded-lg w-20 hover:cursor-pointer hover:bg-sky-300 active:bg-sky-200 "
+         className="border-none bg-sky-100 w-20 h-10 rounded-lg md:w-20 hover:cursor-pointer hover:bg-sky-300 active:bg-sky-200 "
           type="submit"> 
           Submit
           </button>

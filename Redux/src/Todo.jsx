@@ -12,7 +12,7 @@ function Todo() {
        <div>
         {todos.map((todo)=>(
              <div key={todo.id} className="  flex justify-center items-center p-3 ">
-             <ul className=" bg-white w-216 h-30 rounded-lg">
+             <ul className=" bg-white md:w-216 w-150 h-30 rounded-lg">
                  <div className="text-center flex justify-evenly w-full h-full text-4xl items-center  ">
                      <div className="w-full ">
                         {todo.text} 
