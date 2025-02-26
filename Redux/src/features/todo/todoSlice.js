@@ -1,8 +1,12 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { useEffect } from "react";
 
 const initialState = {
-    todos :[{id : 1, text : "hello world"}]
+    todos :[{id : 1, text : "hello world"}],
+    edit : null
 }
+
+
 
 export const todoSlice = createSlice({
     name  : "todos",
@@ -17,10 +21,21 @@ export const todoSlice = createSlice({
         },
         removeTodo : (state, action)=>{
             state.todos = state.todos.filter((todo)=> todo.id !== action.payload)
+        },
+        startEditing :(state, action)=>{
+            const id = action.payload
+            state.edit = state.todos.find((todo)=>(todo.id===id))
+        },
+        editTodo : (state, action) =>{
+            const {id, text} = action.payload
+            state.todos = state.todos.map((todo)=>(
+                todo.id === id? {...todo,text}: todo
+            ))
+            state.edit = null
         }
     }
 })
 
 
-export const {addTodo, removeTodo} = todoSlice.actions
+export const {addTodo, removeTodo,editTodo,startEditing} = todoSlice.actions
 export default todoSlice.reducer

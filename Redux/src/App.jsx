@@ -14,9 +14,6 @@ function App() {
       <div>
       <div className='bg-gray-800 min-h-screen '>
         <div className=''>
-          <AddTodo />
-        </div>
-        <div className='pt-10 '>
           <Todo/>
         </div>
       </div>
