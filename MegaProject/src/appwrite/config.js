@@ -56,22 +56,22 @@ export class Service {
         }
     }
 
-    async deletePost(slug){
+    async deletePost(slug) {
         try {
-             await this.databases.deleteDocument(
+            await this.databases.deleteDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
                 slug
             )
             return true
-            
+
         } catch (error) {
             console.log('Appwrite Serice :: deletePost :: error', error);
-            return  false
+            return false
         }
     }
 
-    async getPost(slug){
+    async getPost(slug) {
         try {
             return await this.databases.getDocument(
                 conf.appwriteDatabaseId,
@@ -83,23 +83,23 @@ export class Service {
             return false
         }
     }
-    
-    async listPosts(){
-        try{
+
+    async listPosts() {
+        try {
             return await this.databases.listDocuments(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId
                 [
-                    Query.equal("status", "active")
+                Query.equal("status", "active")
                 ]
             )
-        }catch(error){
+        } catch (error) {
             console.log('Appwrite Serice :: listPosts :: error', error);
             return false
         }
     }
 
-    async uploadFile(file){
+    async uploadFile(file) {
         try {
             return await this.bucket.uploadFile(
                 conf.appwriteBucketId,
@@ -112,7 +112,7 @@ export class Service {
         }
     }
 
-    async deleteFile(fileId){
+    async deleteFile(fileId) {
         try {
             await this.bucket.deleteFile(
                 conf.appwriteBucketId,
@@ -125,7 +125,7 @@ export class Service {
         }
     }
 
-    getFilePreview(fileId){
+    getFilePreview(fileId) {
         return this.bucket.getFilePreview(
             conf.appwriteBucketId,
             fileId
